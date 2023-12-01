@@ -1,0 +1,6 @@
+<form action ="{% url 'respuesta' %}" method="POST">
+    {% csrf_token %}
+    <label for="id_tipCliente">ID de Cliente:</label>
+    <input type="text" name="id_tipCliente" id="id_tipCliente" required>
+    <button type="submit">Verificar</button>
+</form>
