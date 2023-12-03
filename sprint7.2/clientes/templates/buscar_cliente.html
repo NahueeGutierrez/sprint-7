@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Cliente</title>
+</head>
+<body>
+    <h1>Buscar Cliente</h1>
+    
+    <form method="post" action="{% url 'buscar_cliente' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if cliente %}
+        <h2>Información del Cliente</h2>
+        <p>Nombre: {{ cliente.customer_name }}</p>
+        <p>Apellido: {{ cliente.customer_surname }}</p>
+    {% endif %}
+</body>
+</html>
