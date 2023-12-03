@@ -1,7 +1,6 @@
 from django.urls import path
-from . import views  # Asegúrate de importar el módulo views
+from .views import buscar_cliente, ver_informacion_cliente
 
 urlpatterns = [
-    path('', views.lista_clientes, name='lista_clientes')
-    # Agrega más rutas según sea necesario
+    path('', buscar_cliente, name='buscar_cliente'),
 ]

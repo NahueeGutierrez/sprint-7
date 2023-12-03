@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
 from .views import *
+=======
+from cuentas.views import crear_cuenta  
+from listaDeClientes.views import lista_cuentas_cliente
+
+
+
+>>>>>>> 4703cdf24af51e283beff8fd39cca96d64c0c184
 
 
 
@@ -24,8 +32,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',include('login.urls')),
     path('clientes/', include('clientes.urls')), 
+<<<<<<< HEAD
     path('prestamos/',include('prestamos.urls')),
     path('cuentas/', include('cuentas.urls')),
     path('accounts/', include('django.contrib.auth.urls'))
+=======
+    path('cuentas/', include('cuentas.urls')),
+    path('listaDeClientes/', include('listaDeClientes.urls')), 
+>>>>>>> 4703cdf24af51e283beff8fd39cca96d64c0c184
 ]   
 
+    

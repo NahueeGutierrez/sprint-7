@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import CrearPrestamoForm
@@ -36,3 +37,8 @@ def respuesta(request):
 
 def pagina_de_exito(request):
     return render(request, 'pagina_de_exito.html')
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 4703cdf24af51e283beff8fd39cca96d64c0c184

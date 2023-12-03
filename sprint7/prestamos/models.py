@@ -1,5 +1,6 @@
 from django.db import models
 
+<<<<<<< HEAD
 
 class Prestamo(models.Model):
     loan_id = models.AutoField(primary_key=True)
@@ -45,3 +46,6 @@ class Tiposclientes(models.Model):
 #         db_table = 'cliente'
  
 # INTENTE REALIZAR LA BUSQUEDA MEDIANTE UN FOREING KEY DE CLIENTES PERO NOSE ACTUALIZABA EN LA BASE DE DATOS POR LO TANTO NO ME REALIZABA LA BUSQUEDA Y LO TUVE QUE REALIZAR POR ID_TIPOCLIENTE QUE ESTABA DENTRO DE LA MISMA TABLA
+=======
+# Create your models here.
+>>>>>>> 4703cdf24af51e283beff8fd39cca96d64c0c184

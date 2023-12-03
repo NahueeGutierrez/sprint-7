@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'login',
     'movimientos',
     'prestamos',
-    'tarjetas',
+    'listaDeClientes'
+    
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'sprint7.wsgi.application'
 
