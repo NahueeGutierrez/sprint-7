@@ -30,6 +30,9 @@ urlpatterns = [
     path('clientes/', include('clientes.urls')), 
     path('cuentas/', include('cuentas.urls')),
     path('listaDeClientes/', include('listaDeClientes.urls')), 
+    path('prestamos/',include('prestamos.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),  # Agrega las URLs de autenticación de Django
+
 ]   
 
     
