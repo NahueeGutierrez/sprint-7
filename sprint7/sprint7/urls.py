@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import lista_clientes
+from cuentas.views import crear_cuenta  
+from listaDeClientes.views import lista_cuentas_cliente
+
+
+
 
 
 
@@ -24,8 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',include('login.urls')),
     path('clientes/', include('clientes.urls')), 
-    path('prestamos/',include('prestamos.urls')),
-    path('cuentas/', include('cuentas.urls'))
-
+    path('cuentas/', include('cuentas.urls')),
+    path('listaDeClientes/', include('listaDeClientes.urls')), 
 ]   
 
+    
