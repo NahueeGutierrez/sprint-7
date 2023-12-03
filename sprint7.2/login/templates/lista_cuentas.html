@@ -1,0 +1,15 @@
+<!-- Aquí mostrarías la lista de cuentas -->
+<h2>Lista de Cuentas</h2>
+<ul>
+    {% for cuenta in cuentas %}
+        <li>{{ cuenta.nombre }} - {{ cuenta.saldo }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Aquí agregarías el formulario para crear una nueva cuenta -->
+<h2>Crear Nueva Cuenta</h2>
+<form method="post" action="{% url 'crear_cuenta' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear Cuenta</button>
+</form>
