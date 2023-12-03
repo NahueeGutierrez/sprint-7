@@ -1,6 +1,18 @@
 from django.db import models
 
 
+class Prestamo(models.Model):
+    loan_id = models.AutoField(primary_key=True)
+    loan_type = models.TextField()
+    loan_date = models.TextField()
+    loan_total = models.IntegerField()
+    customer_id = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'prestamo'
+
+
 class Tiposclientes(models.Model):
     id_tipcliente = models.TextField(db_column='ID_TipCliente', primary_key=True)  # Field name made lowercase. This field type is a guess.
     nombre = models.CharField(db_column='NOMBRE',max_length=255)  # Field name made lowercase.
@@ -11,6 +23,10 @@ class Tiposclientes(models.Model):
     class Meta:
         managed = False
         db_table = 'TiposClientes'
+
+
+
+
 
 # class Cliente(models.Model):
 #     customer_id = models.AutoField(primary_key=True)

@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Tiposclientes
+from django.shortcuts import render, redirect
+from .models import *
+from .forms import CrearPrestamoForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def prestamos(request):
     return render(request, 'formulario.html', {})
-
 
 def respuesta(request):
     mensaje = None
@@ -23,5 +24,15 @@ def respuesta(request):
         except Tiposclientes.DoesNotExist or tipo_cliente.id_tipcliente not in [1, 2, 3]:
                 mensaje = 'Este cliente no existe o no tiene un tipo de cliente registrado.'
 
+        form = CrearPrestamoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pagina_de_exito')
+
+    else:
+        form = CrearPrestamoForm()
     
-    return render(request, 'respuesta.html', {'mensaje': mensaje})
+    return render(request, 'respuesta.html', {'mensaje': mensaje, 'form': form})
+
+def pagina_de_exito(request):
+    return render(request, 'pagina_de_exito.html')
